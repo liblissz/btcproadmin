@@ -1,0 +1,173 @@
+
+    .heder{
+        height: 100px;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 20px;
+        font-size: 13px;
+        color:  #333 !important;
+    }
+    @media (max-width: 500px) {
+        .heder{
+            height: auto;
+            flex-direction: column;
+            padding: 2px;
+            justify-content: flex-start;
+
+        }
+        .seperate{
+        padding: 5px;
+     width: 70%;
+    }
+    }
+    .seperate{
+        padding: 10px;
+    
+    }
+    .body{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+  background-color: #fff !important;
+
+    }
+    .fruit-basket {
+  width: auto;
+  margin: auto;
+  height: auto;
+  background-color: #fff !important;
+  margin-bottom: 20px;
+}
+.fruit-basket h1 {
+  font-size: 20px;
+}
+.banana-row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  gap: 25px;
+}
+@media (max-width: 500px) {
+    .banana-row{
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+.banana {
+  display: inline-block;
+  box-shadow: 0 25px 40px rgba(116, 141, 113, 0.729);
+  border-radius: 10px;
+  height: fit-content;
+}
+/* .banana:last-child {
+  margin-right: 0;
+}
+.banana.lemon {
+  margin: 0 0 80px;
+} */
+.mango {
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+}
+.mango:hover .grape {
+  background: rgba(255, 255, 255, 0);
+  color: #fff;
+}
+.mango img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.35s;
+}
+.grape {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.61);
+  color: #000000;
+  font-size: 18px;
+  line-height: 45px;
+  transition: 0.35s;
+  z-index: 2;
+}
+.apple {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  z-index: 2;
+  cursor: pointer;
+}
+.apple:before {
+  content: "\f08a";
+  font-family: fontawesome;
+  font-size: 25px;
+}
+.apple.active:before {
+  content: "\f004";
+  color: rgb(255, 255, 255);
+}
+.orange {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+.orange small {
+  color: #373737;
+}
+.orange span {
+  font-size: 13px;
+  font-weight: 400;
+  color: grey;
+}
+.orange h5 {
+  margin: 0;
+  color: rgb(16, 114, 33);
+}
+.orange h5 b {
+  color: #222;
+  margin: 0 5px;
+}
+.orange em {
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 400;
+  color: grey;
+}
+.banana a:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #ffff;
+  padding: 5px 10px;
+  border-radius: 0 10px 0 0;
+  color: rgb(16, 114, 33);
+  font-weight: 500;
+  font-size: 15px;
+}
+.banana:nth-child(1) a:before {
+  content: "BEST";
+}
+.banana:nth-child(3) a:before {
+  content: "NEW";
+}
