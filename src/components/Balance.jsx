@@ -55,6 +55,14 @@ export default function Balance() {
 fetchuser();
     }, [])
     const [isActive, setisActive] = useState(true)
+
+    const balancesheet = async ()=>{
+      try{
+ await axios.get("https://btcbackend-e7yt.onrender.com/balancesheet")
+      }catch(error){
+        toast.error(error)
+      }
+    }
   return (
     <div className="p-4 bg-foreground rounded-3xl">
       <div className="flex justify-between items-start gap-6">
@@ -71,7 +79,7 @@ fetchuser();
         </div>
 
         <button className="h-10 rounded-md border border-gray-300 pl-2 pr-2 py-0.5 flex gap-2 items-center justify-center text-zinc-600">
-          <img src="/undraw_starting-work_ifnt.svg" className="w-6 aspect-square rounded-full" alt="Nigerian flag" />
+          <img src="/undraw_starting-work_ifnt.svg" className="w-6 aspect-square rounded-full" alt=" flag" />
           <span className="text-sm font-semibold">CMR</span>
         </button>
       </div>
