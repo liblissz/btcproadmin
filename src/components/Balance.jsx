@@ -85,7 +85,7 @@ fetchuser();
       </div>
 
       <div className="mt-4 flex gap-3">
-        <button className="flex-1 h-[44px] px-4 flex gap-3 items-center justify-center rounded-full bg-zinc-900 text-zinc-100">
+        <button onClick={balancesheet} className="flex-1 h-[44px] px-4 flex gap-3 items-center justify-center rounded-full bg-zinc-900 text-zinc-100">
           <BiTransferAlt size={20} />
           <span className="text-base font-semibold">balancesheet</span>
         </button>
