@@ -71,7 +71,7 @@ fetchuser();
         </div>
 
         <button className="h-10 rounded-md border border-gray-300 pl-2 pr-2 py-0.5 flex gap-2 items-center justify-center text-zinc-600">
-          <img src="/public/undraw_starting-work_ifnt.svg" className="w-6 aspect-square rounded-full" alt="Nigerian flag" />
+          <img src="/undraw_starting-work_ifnt.svg" className="w-6 aspect-square rounded-full" alt="Nigerian flag" />
           <span className="text-sm font-semibold">CMR</span>
         </button>
       </div>
