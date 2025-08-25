@@ -57,17 +57,31 @@ fetchuser();
     const [isActive, setisActive] = useState(true)
 
    const balancesheet = async () => {
-    try {
-      setloading(true);
-      await axios.get("https://btcbackend-e7yt.onrender.com/balancesheet");
-      toast.success("Balance sheet generated successfully!");
-    } catch (error) {
-      toast.error("Failed to generate balance sheet");
-      console.error(error);
-    } finally {
-      setloading(false);
-    }
-  };
+  try {
+    setLoading(true);
+    const response = await axios.get(
+      "https://btcbackend-e7yt.onrender.com/balancesheet",
+      { responseType: "blob" } 
+    );
+
+    
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "btc-pharmacy-balancesheet.pdf");
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    toast.success("Balance sheet downloaded successfully!");
+  } catch (error) {
+    toast.error("Failed to download balance sheet");
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+};
+
   return (
     <div className="p-4 bg-foreground rounded-3xl">
       <div className="flex justify-between items-start gap-6">
