@@ -56,16 +56,18 @@ fetchuser();
     }, [])
     const [isActive, setisActive] = useState(true)
 
-    const balancesheet = async ()=>{
-      try{
-        setloading(true)
- await axios.get("https://btcbackend-e7yt.onrender.com/balancesheet")
-      }catch(error){
-        toast.error(error)
-      }finally{
-        setloading(false)
-      }
+   const balancesheet = async () => {
+    try {
+      setLoading(true);
+      await axios.get("https://btcbackend-e7yt.onrender.com/balancesheet");
+      toast.success("Balance sheet generated successfully!");
+    } catch (error) {
+      toast.error("Failed to generate balance sheet");
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
+  };
   return (
     <div className="p-4 bg-foreground rounded-3xl">
       <div className="flex justify-between items-start gap-6">
@@ -88,14 +90,18 @@ fetchuser();
       </div>
 
       <div className="mt-4 flex gap-3">
+
         <button onClick={balancesheet} className="flex-1 h-[44px] px-4 flex gap-3 items-center justify-center rounded-full bg-zinc-900 text-zinc-100">
           <BiTransferAlt size={20} />
           <span className="text-base font-semibold">{loading ? "loading...": "balancesheet"}</span>
         </button>
+
+
         <button className="flex-1 h-[44px] px-4 flex gap-3 items-center justify-center rounded-full bg-zinc-100 text-zinc-800">
           <BiTransferAlt size={20} />
           <span className="text-base font-semibold">orders</span>
         </button>
+
       </div>
 
       <div className="mt-6 rounded-2xl p-3 flex flex-col gap-3 bg-zinc-100">
