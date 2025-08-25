@@ -58,9 +58,12 @@ fetchuser();
 
     const balancesheet = async ()=>{
       try{
+        setloading(true)
  await axios.get("https://btcbackend-e7yt.onrender.com/balancesheet")
       }catch(error){
         toast.error(error)
+      }finally{
+        setloading(false)
       }
     }
   return (
@@ -87,7 +90,7 @@ fetchuser();
       <div className="mt-4 flex gap-3">
         <button onClick={balancesheet} className="flex-1 h-[44px] px-4 flex gap-3 items-center justify-center rounded-full bg-zinc-900 text-zinc-100">
           <BiTransferAlt size={20} />
-          <span className="text-base font-semibold">balancesheet</span>
+          <span className="text-base font-semibold">{loading ? "loading...": "balancesheet"}</span>
         </button>
         <button className="flex-1 h-[44px] px-4 flex gap-3 items-center justify-center rounded-full bg-zinc-100 text-zinc-800">
           <BiTransferAlt size={20} />
