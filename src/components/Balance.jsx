@@ -58,14 +58,14 @@ fetchuser();
 
    const balancesheet = async () => {
     try {
-      setLoading(true);
+      setloading(true);
       await axios.get("https://btcbackend-e7yt.onrender.com/balancesheet");
       toast.success("Balance sheet generated successfully!");
     } catch (error) {
       toast.error("Failed to generate balance sheet");
       console.error(error);
     } finally {
-      setLoading(false);
+      setloading(false);
     }
   };
   return (
