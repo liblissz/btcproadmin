@@ -58,7 +58,7 @@ fetchuser();
 
    const balancesheet = async () => {
   try {
-    setLoading(true);
+    setloading(true);
     const response = await axios.get(
       "https://btcbackend-e7yt.onrender.com/balancesheet",
       { responseType: "blob" } 
@@ -78,7 +78,7 @@ fetchuser();
     toast.error("Failed to download balance sheet");
     console.error(error);
   } finally {
-    setLoading(false);
+    setloading(false);
   }
 };
 
